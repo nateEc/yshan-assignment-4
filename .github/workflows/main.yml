@@ -1,31 +1,26 @@
-name: Python Application
+name: Python application
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: make install
-
-    - name: Run application
-      run: make run
-
-    - name: Test server response (optional, add tests if needed)
-      run: echo "Testing server response..."
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: make install
+      - name: Run server
+        run: make run &
+      - name: Wait for server
+        run: sleep 5
+      - name: Test if server is running
+        run: curl http://localhost:3000
