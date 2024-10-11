@@ -1,0 +1,111 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main heading style */
+h1 {
+    color: #007BFF;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Subheading style */
+h2 {
+    color: #ff6347;  /* Tomato color for subheadings */
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+button {
+    padding: 10px 25px;
+    background-color: #28a745; /* Green color for the button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Results container */
+#results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individual result card styling */
+#results div {
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #007BFF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for result cards */
+#results div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Paragraph styling inside the results */
+#results div p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Chart canvas styling */
+canvas {
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+/* Add a footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
+    font-size: 0.9rem;
+}
