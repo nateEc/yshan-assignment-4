@@ -35,4 +35,4 @@ jobs:
 
       # Step 6: Test if the Flask server is running (modify to port 3000 or 5000 based on app config)
       - name: Test if server is running
-        run: curl http://localhost:5000  # or http://localhost:3000 based on your configuration
+        run: curl http://localhost:3000  # or http://localhost:3000 based on your configuration
