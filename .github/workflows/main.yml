@@ -1,0 +1,38 @@
+name: Python application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - uses: actions/checkout@v2
+      
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: make install
+
+      # Step 4: Run the Flask server in the background (on port 5000 or 3000)
+      - name: Run server
+        run: |
+          nohup make run &
+
+      # Step 5: Wait for the server to start
+      - name: Wait for server
+        run: sleep 10
+
+      # Step 6: Test if the Flask server is running (modify to port 3000 or 5000 based on app config)
+      - name: Test if server is running
+        run: curl http://localhost:5000  # or http://localhost:3000 based on your configuration
